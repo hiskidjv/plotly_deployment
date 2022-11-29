@@ -5,19 +5,21 @@ function buildCharts(sample) {
     console.log(data);
 
     // Create a variable that holds the samples array. 
-
+    var samples = data.samples;
     // Create a variable that filters the samples for the object with the desired sample number.
-
+    var resultArray1 = samples.filter(sampleObj => sampleObj.id == sample);
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
-
+    var resultArray2 = metadata.filter(sampleObj => sampleObj.id == sample);
     // Create a variable that holds the first sample in the array.
-  
+    var result1 = resultArray1[0];
 
     // 2. Create a variable that holds the first sample in the metadata array.
-    
+    var result2 = resultArray2[0];
 
     // Create variables that hold the otu_ids, otu_labels, and sample_values.
-
+    var otu_ids = result1.otu_ids;
+    var otu_labels = result1.otu_labels;
+    var sample_values = result1.sample_values;
 
     // 3. Create a variable that holds the washing frequency.
    
@@ -41,6 +43,6 @@ function buildCharts(sample) {
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot();
+    Plotly.newPlot('gauge', guageData, gaugeLayout);
   });
 }
