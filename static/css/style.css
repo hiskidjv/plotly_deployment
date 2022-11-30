@@ -1,0 +1,15 @@
+.jumbotron {
+    background-image: url("../images/bacteria.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+}
+.paragraph {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18pt;
+}
+
+body {
+    background-color: beige;   
+}
